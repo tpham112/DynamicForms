@@ -1,0 +1,75 @@
+/* 1. Global Styles & Typography */
+body {
+    margin: 0;
+    padding: 2% 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+    /* Background Setup */
+    background-image: url('assets/SAC-Health-Sciences-exterior-1-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* 2. Modern "Glass" Form Container */
+form {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    backdrop-filter: blur(10px);           /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 3. Sleek Input Fields */
+input, select, textarea, 
+#FormPage input[type=text]:read-only, 
+#FormPage textarea:read-only {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+}
+
+/* Focus state for interactivity */
+input:focus, select:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15);
+}
+
+/* 4. Modern Submit Button */
+button, input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    width: 100%;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+button:active, input[type="submit"]:active {
+    transform: translateY(0);
+}
