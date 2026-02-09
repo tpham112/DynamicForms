@@ -16,20 +16,16 @@ form {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* Base styling for input boxes */
+/* Base styling for inputs */
 input, select, textarea, #FormPage input[type=text]:read-only, #FormPage textarea:read-only {
-    border-radius: 8px; /* Slightly rounder for a more modern feel */
-    border: 1px solid #D1D5DB; /* A softer border color */
-    padding: 12px 16px; /* This makes the boxes feel "bigger" and premium */
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box; /* Ensures padding doesn't break the layout */
+    border-radius: 4px;
+    border: 1px solid #D1D5DB; /* Standard soft border */
     transition: all 0.2s ease-in-out;
 }
 
 /* The Red Focus Effect */
 input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: #BA0C2F; /* Santa Ana Red */
-    box-shadow: 0 0 0 3px rgba(186, 12, 47, 0.1); /* Subtle red glow */
+    border-color: #BA0C2F !important; /* Santa Ana Red */
+    box-shadow: 0 0 0 3px rgba(186, 12, 47, 0.2) !important; /* Subtle red glow */
 }
