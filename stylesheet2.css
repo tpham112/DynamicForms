@@ -15,7 +15,7 @@ body {
 form {
     background-color: white;
     padding: 40px; /* Increased padding for better internal spacing */
-    max-width: 600px; /* Keeps the form from getting too wide on desktop */
+    max-width: 900px; /* Keeps the form from getting too wide on desktop */
     width: 90%;
     border-radius: 12px; /* Slightly rounder for a modern feel */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
