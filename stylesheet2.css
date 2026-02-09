@@ -1,64 +1,65 @@
-body {
+/* 1. Target the main wrapper to handle background and centering */
+body, #ActionCenterWrapper {
     margin: 0;
     padding: 2% 0;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-size: cover;
-    background-image: url('assets/SAC-Health-Sciences-exterior-1-1.jpg');
-    background-attachment: fixed;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-image: url('assets/SAC-Health-Sciences-exterior-1-1.jpg') !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
 }
 
-form {
-    background-color: white;
-    padding: 40px; /* Increased padding for better internal spacing */
-    max-width: 900px; /* Keeps the form from getting too wide on desktop */
-    width: 90%;
-    border-radius: 12px; /* Slightly rounder for a modern feel */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+/* 2. Force the form container to look like a modern card */
+form, .df-form-container {
+    background-color: white !important;
+    padding: 30px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    border: none !important;
+    max-width: 900px !important;
 }
 
-/* Grouping input styles for consistency */
-input, 
-select, 
-textarea, 
-#FormPage input[type=text]:read-only, 
-#FormPage textarea:read-only {
-    width: 100%;
-    padding: 12px 16px;
-    margin-top: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #D1D5DB; /* Lighter, softer border */
-    border-radius: 8px; /* Rounded corners */
-    font-size: 16px;
-    transition: all 0.2s ease-in-out;
-    box-sizing: border-box; /* Ensures padding doesn't break layout */
+/* 3. Modernizing the Section Headers (Student Information, etc.) */
+/* Dynamic Forms often uses <h3> or specific classes for these bars */
+h3, .df-section-header, .df-table-header {
+    background-color: #f8f9fa !important; /* Light gray instead of dark */
+    color: #BA0C2F !important; /* Santa Ana Red text */
+    padding: 12px !important;
+    border-radius: 6px !important;
+    font-size: 1.1rem !important;
+    border-left: 5px solid #BA0C2F !important; /* Stylish accent line */
+    margin-top: 25px !important;
 }
 
-/* Interactive Focus State */
-input:focus, 
-select:focus, 
-textarea:focus {
-    outline: none;
-    border-color: #BA0C2F; /* Santa Ana Red accent */
-    box-shadow: 0 0 0 3px rgba(186, 12, 47, 0.1); /* Subtle glow */
+/* 4. Global Input Overrides */
+/* This specific selector helps beat platform defaults */
+#FormPage input[type="text"], 
+#FormPage select, 
+#FormPage textarea,
+.df-input {
+    border: 1px solid #D1D5DB !important;
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+    height: auto !important; /* Overrides fixed platform heights */
+    transition: border-color 0.2s, box-shadow 0.2s !important;
 }
 
-/* Styling for Form Labels to make them readable */
-label {
-    font-weight: 600;
-    color: #374151;
-    font-size: 14px;
-    display: block;
+/* 5. Focus State with SAC Red */
+#FormPage input:focus, 
+#FormPage select:focus {
+    border-color: #BA0C2F !important;
+    box-shadow: 0 0 0 3px rgba(186, 12, 47, 0.1) !important;
+    outline: none !important;
 }
 
-/* Read-only fields styling */
-#FormPage input[type=text]:read-only, 
-#FormPage textarea:read-only {
-    background-color: #F9FAFB;
-    color: #6B7280;
-    border-style: dashed; /* Visual cue that it's not editable */
+/* 6. Clean up table spacing */
+/* Dynamic Forms layouts are often table-based; this adds breathing room */
+table {
+    border-collapse: separate !important;
+    border-spacing: 0 10px !important;
+}
+
+td {
+    padding: 5px 10px !important;
 }
