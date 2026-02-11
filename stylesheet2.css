@@ -1,13 +1,21 @@
+/* 1. Global Reset & Layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    margin-top: 2%;
-    margin-bottom: 2%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-size: cover;
     background-image: url('assets/SAC-Health-Sciences-exterior-1-1.jpg');
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
+    padding: 20px;
 }
 
 form {
@@ -16,21 +24,78 @@ form {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* Base styling for BIGGER inputs */
-input, select, textarea, #FormPage input[type=text]:read-only, #FormPage textarea:read-only {
-    width: 100%;             /* Makes boxes span the full form width */
-    padding: 14px 18px;      /* Significantly increases the height and internal space */
-    margin-bottom: 20px;     /* Adds more breathing room between boxes */
-    font-size: 16px;         /* Larger text improves readability and prevents iOS zoom */
-    border-radius: 6px;      /* Slightly rounder corners for the larger size */
+/* 2. Targeted Styling for Input Boxes (Excludes Buttons) */
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="number"], 
+input[type="url"],
+input[type="password"],
+input[type="date"],
+select, 
+textarea, 
+#FormPage input:read-only, 
+#FormPage textarea:read-only {
+    width: 100%;             
+    padding: 14px 18px;      
+    margin-bottom: 20px;     
+    font-size: 16px;         
+    border-radius: 6px;      
     border: 1px solid #D1D5DB;
+    background-color: #FFFFFF;
+    color: #374151;
     transition: all 0.2s ease-in-out;
-    box-sizing: border-box;  /* Ensures padding doesn't push the box outside the form */
+    display: block; /* Ensures they stack nicely */
 }
 
-/* The Red Focus Effect */
-input:focus, select:focus, textarea:focus {
+/* 3. The Red Focus Effect */
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="tel"]:focus, 
+input[type="number"]:focus, 
+select:focus, 
+textarea:focus {
     outline: none;
     border-color: #BA0C2F !important;
     box-shadow: 0 0 0 3px rgba(186, 12, 47, 0.2) !important;
+}
+
+/* 4. Modern Button Styling (Santa Ana Red) */
+/* This targets the actual button so it doesn't look like a text box */
+input[type="submit"], 
+input[type="button"], 
+button {
+    background-color: #BA0C2F;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+    width: auto; /* Buttons shouldn't always be full-width unless you want them to be */
+    min-width: 150px;
+}
+
+input[type="submit"]:hover, 
+button:hover {
+    background-color: #8A0924; /* Darker Santa Ana Red */
+}
+
+input[type="submit"]:active, 
+button:active {
+    transform: scale(0.98); /* Slight click feedback */
+}
+
+/* 5. Mobile Adjustments */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Fixes jittery background on iOS Safari */
+    }
+    
+    form {
+        padding: 20px;
+    }
 }
