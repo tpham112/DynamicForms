@@ -1,99 +1,39 @@
-/* 1. Modern Reset & Accessibility */
-* {
-    box-sizing: border-box; /* Prevents padding from breaking layouts */
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    /* Full screen centering */
-    min-height: 100vh;
+    margin-top: 2%;
+    margin-bottom: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    /* Font & Background */
-    font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
-    background-image: url('assets/SAC-Health-Sciences-exterior-1-1.jpg');
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Parallax effect for desktop */
-    
-    /* Padding prevents the form from touching screen edges on mobile */
-    padding: 20px;
+    background-image: url('assets/SAC-Health-Sciences-exterior-1-1.jpg');
+    background-attachment: fixed;
 }
 
-/* 2. Responsive Form Container */
 form {
-    background-color: #FFFFFF;
-    border-radius: 12px; /* Slightly softer corners */
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-    
-    /* Responsive Width Logic */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 30px; /* Added internal space for the form itself */
     width: 100%;
-    max-width: 500px; 
-    padding: 2.5rem; /* Generous internal breathing room */
+    max-width: 550px; /* Keeps the form from getting too wide on desktop */
 }
 
-/* 3. Modernized Input Fields */
-input, 
-select, 
-textarea {
-    width: 100%;
-    padding: 12px 16px;
-    margin-top: 8px;
-    margin-bottom: 20px;
-    
-    /* Modern look: subtle border and light gray background */
-    background-color: #F9FAFB;
-    border: 1px solid #D1D5DB; 
-    border-radius: 8px;
-    
-    /* Typography */
-    font-size: 16px; /* Essential: Prevents iOS Safari from auto-zooming on focus */
-    color: #374151;
-    
-    /* Smooth interaction transition */
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+/* Base styling for BIGGER inputs */
+input, select, textarea, #FormPage input[type=text]:read-only, #FormPage textarea:read-only {
+    width: 100%;             /* Makes boxes span the full form width */
+    padding: 14px 18px;      /* Significantly increases the height and internal space */
+    margin-bottom: 20px;     /* Adds more breathing room between boxes */
+    font-size: 16px;         /* Larger text improves readability and prevents iOS zoom */
+    border-radius: 6px;      /* Slightly rounder corners for the larger size */
+    border: 1px solid #D1D5DB;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;  /* Ensures padding doesn't push the box outside the form */
 }
 
-/* Interactive Hover State */
-input:hover, 
-select:hover, 
-textarea:hover {
-    border-color: #9CA3AF;
-    background-color: #F3F4F6;
-}
-
-/* Modern Focused State (Santa Ana Red) */
-input:focus, 
-select:focus, 
-textarea:focus {
+/* The Red Focus Effect */
+input:focus, select:focus, textarea:focus {
     outline: none;
-    background-color: #FFFFFF;
     border-color: #BA0C2F !important;
-    /* Red glow that follows accessibility standards */
-    box-shadow: 0 0 0 4px rgba(186, 12, 47, 0.15) !important;
-}
-
-/* Read-Only Styling */
-#FormPage input:read-only, 
-#FormPage textarea:read-only {
-    background-color: #F3F4F6;
-    color: #6B7280;
-    border-style: dashed;
-    cursor: not-allowed;
-}
-
-/* 4. Mobile Responsiveness Fixes */
-@media (max-width: 768px) {
-    body {
-        /* FIXED BACKGROUND FIX: Fixed backgrounds are jittery on mobile browsers */
-        background-attachment: scroll; 
-    }
-
-    form {
-        padding: 1.5rem; /* Shrinks padding for more room on small screens */
-    }
+    box-shadow: 0 0 0 3px rgba(186, 12, 47, 0.2) !important;
 }
