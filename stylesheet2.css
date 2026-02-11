@@ -34,3 +34,25 @@ input:focus, select:focus, textarea:focus {
     border-color: #BA0C2F !important;
     box-shadow: 0 0 0 3px rgba(186, 12, 47, 0.2) !important;
 }
+
+/* Button Styling: Hand cursor and Red Submit button */
+#SaveAsDraftButton, #NextButton {
+    cursor: pointer; /* Changes cursor to a hand on hover */
+}
+
+#NextButton {
+    background-color: #BA0C2F; /* Matching your focus effect red */
+    color: white;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+#NextButton:hover {
+    background-color: #8a0822; /* A slightly darker red for the hover state */
+}
+
+/* Optional: Subtle hover effect for the Save Progress button */
+#SaveAsDraftButton:hover {
+    background-color: #f3f4f6;
+}
