@@ -15,9 +15,7 @@ form {
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 30px; /* Added internal space for the form itself */
-    width: 100%;
-    max-width: 550px; /* Keeps the form from getting too wide on desktop */
-}
+    width: 100%;}
 
 /* Base styling for BIGGER inputs */
 input, select, textarea, #FormPage input[type=text]:read-only, #FormPage textarea:read-only {
